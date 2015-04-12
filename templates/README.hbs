@@ -1,0 +1,109 @@
+# mailmake
+
+> Generate RFC1521 valid mime files for use with Mailgun and other similar services.
+
+## Installation
+
+```bash
+$ npm install mailmake -g
+```
+
+## Usage
+
+```
+ Usage: mailmake <path> [options]
+
+ Options:
+
+  -h, --help        Display this help message.
+  -v, --version     Display the current installed version.
+  -s, --subject     Set the subject header.
+  -f, --from        Set the from email address header.
+  -t, --to          Set the to email address header.
+```
+
+## API
+
+### Install
+
+```bash
+$ npm install mailmake --save
+```
+
+### Usage
+
+```javascript
+var mailmake = require('mailmake');
+
+var email_contents = '# Hello World!';
+
+mailmake.generate(email_contents, {
+    subject: 'Hello World!',
+    from: 'test@example.com',
+    to: 'mailing-list@example.com'
+}).then(function (output) {
+    console.log(output);
+});
+```
+
+{{#each files}}{{#each methods}}
+
+### {{replace name "module.exports" "mailmake"}}({{params}}) {{#if isPrivate}} *private method*{{/if}}
+
+{{{description}}}
+
+{{{body}}}
+
+{{#if tags.param}}
+
+#### Parameters
+
+{{#each tags.param}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+{{/each}}
+
+{{/if}}
+
+{{#if tags.property}}
+
+#### Properties
+
+{{#each tags.property}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+{{/each}}
+
+{{/if}}
+
+{{#if tags.example}}
+
+#### Examples
+
+{{#each tags.example}}
+```javascript
+{{{.}}}
+```
+{{/each}}
+
+{{/if}}
+
+#### Returns
+
+{{#if tags.return}}
+
+{{#each tags.return}}
+- {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+{{/each}}
+
+{{else}}
+
+- `Void`
+
+{{/if}}
+
+{{/each}}{{/each}}
+
+## Reference
+
+<http://www.w3.org/Protocols/rfc1341/0_TableOfContents.html>
+
+*Documentation generated with [doxdox](https://github.com/neogeek/doxdox).*

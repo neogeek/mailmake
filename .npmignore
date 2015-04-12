@@ -1,0 +1,5 @@
+templates/
+test/
+.travis.yml
+Grunfile.js
+Makefile

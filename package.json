@@ -1,0 +1,41 @@
+{
+  "name": "mailmake",
+  "description": "Generate RFC1521 valid mime files for use with Mailgun and other similar services.",
+  "version": "1.0.0",
+  "bin": "./bin/mailmake",
+  "main": "./lib/mailmake.js",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "1.0.0",
+    "extend": "2.0.0",
+    "markdown-it": "4.1.0",
+    "q": "1.2.0"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-doxdox": "0.0.13",
+    "mocha": "2.2.4"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "mime",
+    "mail",
+    "mailgun",
+    "markdown"
+  ],
+  "authors": [
+    {
+      "name": "Scott Doxey",
+      "email": "hello@scottdoxey.com",
+      "homepage": "http://scottdoxey.com/"
+    }
+  ],
+  "homepage": "https://github.com/neogeek/mailmake",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neogeek/mailmake.git"
+  }
+}
