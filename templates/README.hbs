@@ -1,3 +1,7 @@
+[![](https://api.travis-ci.org/neogeek/mailmake.svg)](https://travis-ci.org/neogeek/mailmake)
+[![](https://david-dm.org/neogeek/mailmake.svg?style=flat)](https://david-dm.org/neogeek/mailmake)
+[![](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
+
 # mailmake
 
 > Generate RFC1521 valid mime files for use with Mailgun and other similar services.
