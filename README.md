@@ -1,6 +1,8 @@
-[![](https://api.travis-ci.org/neogeek/mailmake.svg)](https://travis-ci.org/neogeek/mailmake)
-[![](https://david-dm.org/neogeek/mailmake.svg?style=flat)](https://david-dm.org/neogeek/mailmake)
-[![](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
+[![Build Status](https://api.travis-ci.org/neogeek/mailmake.svg)](https://travis-ci.org/neogeek/mailmake)
+[![Dependency Status](https://david-dm.org/neogeek/mailmake.svg?style=flat)](https://david-dm.org/neogeek/mailmake)
+[![Code Climate](https://codeclimate.com/github/neogeek/mailmake/badges/gpa.svg)](https://codeclimate.com/github/neogeek/mailmake)
+[![Coverage Status](https://coveralls.io/repos/neogeek/mailmake/badge.svg?branch=master)](https://coveralls.io/r/neogeek/mailmake?branch=master)
+[![NPM Version](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
 
 # mailmake
 
