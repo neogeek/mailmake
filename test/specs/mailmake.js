@@ -1,7 +1,7 @@
 var fs = require('fs');
 var assert = require('assert');
 
-var mailmake = require('..');
+var mailmake = require('../../lib/mailmake');
 
 describe('mailmake', function () {
 
