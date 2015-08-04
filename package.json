@@ -15,7 +15,7 @@
     "coveralls": "2.11.3",
     "grunt": "0.4.5",
     "grunt-contrib-watch": "0.6.1",
-    "grunt-doxdox": "0.0.14",
+    "grunt-doxdox": "0.0.15",
     "jscoverage": "0.5.9",
     "mocha": "2.2.5",
     "mocha-lcov-reporter": "0.0.2"

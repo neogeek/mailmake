@@ -61,7 +61,6 @@ Returns a randomly generated string based on seed.
     console.log(mailmake.randomString(10));
 
 
-
 #### Parameters
 
 - **num** `Integer`  *Optional* The length of randomly generated string. Default 20.
@@ -82,7 +81,6 @@ Returns a randomly generated string based on seed.
 Returns a valid boundary string based on contents of email.
 
     console.log(mailmake.boundaryString(fs.readFileSync('email.html', 'utf8')));
-
 
 
 #### Parameters
@@ -113,7 +111,6 @@ Returns generated mime file contents based on either file or string.
     });
 
 
-
 #### Parameters
 
 - **input** `String`   File path or string of email contents. Can be either HTML or Markdown.
@@ -142,7 +139,6 @@ Returns generated mime file contents.
         from: 'test@example.com',
         to: 'mailing-list@example.com'
     }));
-
 
 
 #### Parameters
