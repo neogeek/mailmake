@@ -13,9 +13,7 @@
   },
   "devDependencies": {
     "coveralls": "2.11.14",
-    "grunt": "1.0.1",
-    "grunt-contrib-watch": "1.0.0",
-    "grunt-doxdox": "0.0.19",
+    "doxdox": "0.1.15",
     "jscoverage": "0.6.0",
     "mocha": "3.1.0",
     "mocha-lcov-reporter": "1.2.0"
