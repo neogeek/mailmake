@@ -1,9 +1,7 @@
 var fs = require('fs');
 var assert = require('assert');
 
-var lib = process.env.COVERAGE ? '../../lib-cov' : '../../lib';
-
-var mailmake = require(lib + '/mailmake');
+var mailmake = require('../../lib/mailmake');
 
 describe('mailmake', function () {
 

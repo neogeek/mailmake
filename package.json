@@ -2,6 +2,9 @@
   "name": "mailmake",
   "description": "Generate RFC1521 valid mime files for use with Mailgun and other similar services.",
   "version": "1.0.1",
+  "engines": {
+    "node": ">=4.0"
+  },
   "bin": "./bin/mailmake",
   "main": "./lib/mailmake.js",
   "license": "MIT",
@@ -12,11 +15,10 @@
     "q": "1.4.1"
   },
   "devDependencies": {
-    "coveralls": "2.11.14",
+    "codecov": "1.0.1",
     "doxdox": "0.1.15",
-    "jscoverage": "0.6.0",
-    "mocha": "3.1.0",
-    "mocha-lcov-reporter": "1.2.0"
+    "istanbul": "0.4.5",
+    "mocha": "3.1.0"
   },
   "scripts": {
     "test": "make test"
