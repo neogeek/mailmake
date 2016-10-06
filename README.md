@@ -92,9 +92,9 @@ Returns a boundary string.
 Returns generated mime file contents.
 
     console.log(mailmake.generateFromString('# Hello World!', {
-        from: 'test@example.com',
-        subject: 'Hello World!',
-        to: 'mailing-list@example.com'
+        'from': 'test@example.com',
+        'subject': 'Hello World!',
+        'to': 'mailing-list@example.com'
     }));
 
 
@@ -122,10 +122,10 @@ Returns generated mime file contents.
 Returns generated mime file contents based on either file or string.
 
     mailmake.generate('email.html', {
-       from: 'test@example.com',
-       subject: 'Hello World!',
-       to: 'mailing-list@example.com'
-    }).then(function (output) {
+       'from': 'test@example.com',
+       'subject': 'Hello World!',
+       'to': 'mailing-list@example.com'
+    }).then(output => {
        console.log(output);
     });
 
