@@ -38,15 +38,15 @@ $ npm install mailmake --save
 ### Usage
 
 ```javascript
-var mailmake = require('mailmake');
+const mailmake = require('mailmake');
 
-var email_contents = '# Hello World!';
+const email_contents = '# Hello World!';
 
 mailmake.generate(email_contents, {
-    subject: 'Hello World!',
-    from: 'test@example.com',
-    to: 'mailing-list@example.com'
-}).then(function (output) {
+    'from': 'test@example.com',
+    'subject': 'Hello World!',
+    'to': 'mailing-list@example.com'
+}).then(output => {
     console.log(output);
 });
 ```

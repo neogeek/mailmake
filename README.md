@@ -22,8 +22,8 @@ $ npm install mailmake -g
 
   -h, --help        Display this help message.
   -v, --version     Display the current installed version.
-  -f, --from        Set the from email address header.
   -s, --subject     Set the subject header.
+  -f, --from        Set the from email address header.
   -t, --to          Set the to email address header.
 ```
 
@@ -38,22 +38,22 @@ $ npm install mailmake --save
 ### Usage
 
 ```javascript
-var mailmake = require('mailmake');
+const mailmake = require('mailmake');
 
-var email_contents = '# Hello World!';
+const email_contents = '# Hello World!';
 
 mailmake.generate(email_contents, {
-    subject: 'Hello World!',
-    from: 'test@example.com',
-    to: 'mailing-list@example.com'
-}).then(function (output) {
+    'from': 'test@example.com',
+    'subject': 'Hello World!',
+    'to': 'mailing-list@example.com'
+}).then(output => {
     console.log(output);
 });
 ```
 
 
 
-### randomString()
+### randomString() 
 
 Returns a randomly generated string based on seed.
 
@@ -70,7 +70,7 @@ Returns a randomly generated string based on seed.
 
 
 
-### boundaryString()
+### boundaryString() 
 
 Returns a boundary string.
 
@@ -92,8 +92,8 @@ Returns a boundary string.
 Returns generated mime file contents.
 
     console.log(mailmake.generateFromString('# Hello World!', {
-        subject: 'Hello World!',
         from: 'test@example.com',
+        subject: 'Hello World!',
         to: 'mailing-list@example.com'
     }));
 
@@ -102,8 +102,8 @@ Returns generated mime file contents.
 
 - **input** `String`   String of email contents. Can be either HTML or Markdown.
 - **options** `String`  *Optional* Options for generating file.
-- **options.subject** `String`  *Optional* Subject of email.
 - **options.from** `String`  *Optional* From address of email.
+- **options.subject** `String`  *Optional* Subject of email.
 - **options.to** `String`  *Optional* To address of email.
 
 
@@ -117,13 +117,13 @@ Returns generated mime file contents.
 
 
 
-### generate(input[, options])
+### generate(input[, options]) 
 
 Returns generated mime file contents based on either file or string.
 
     mailmake.generate('email.html', {
-       subject: 'Hello World!',
        from: 'test@example.com',
+       subject: 'Hello World!',
        to: 'mailing-list@example.com'
     }).then(function (output) {
        console.log(output);
@@ -134,8 +134,8 @@ Returns generated mime file contents based on either file or string.
 
 - **input** `String`   File path or string of email contents. Can be either HTML or Markdown.
 - **options** `String`  *Optional* Options for generating file.
-- **options.subject** `String`  *Optional* Subject of email.
 - **options.from** `String`  *Optional* From address of email.
+- **options.subject** `String`  *Optional* Subject of email.
 - **options.to** `String`  *Optional* To address of email.
 
 
