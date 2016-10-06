@@ -22,8 +22,8 @@ $ npm install mailmake -g
 
   -h, --help        Display this help message.
   -v, --version     Display the current installed version.
-  -s, --subject     Set the subject header.
   -f, --from        Set the from email address header.
+  -s, --subject     Set the subject header.
   -t, --to          Set the to email address header.
 ```
 
