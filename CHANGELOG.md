@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 (October 6, 2015)
+
+- Changed minimum Node.js version to 4.
+- Updated codebase to ES2015.
+- Updated packages.
+
 ## 1.0.1 (August 3, 2015)
 
 - Updated packages.

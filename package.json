@@ -1,7 +1,7 @@
 {
   "name": "mailmake",
   "description": "Generate RFC1521 valid mime files for use with Mailgun and other similar services.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "node": ">=4.0"
   },
