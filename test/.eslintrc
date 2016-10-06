@@ -1,0 +1,11 @@
+{
+  "globals": {
+    "before": true,
+    "describe": true,
+    "it": true
+  },
+  "rules": {
+    "no-console": 0,
+    "no-magic-numbers": 0
+  }
+}

@@ -15,8 +15,10 @@
     "q": "1.4.1"
   },
   "devDependencies": {
+    "@neogeek/eslint-config-standards": "1.6.1",
     "codecov": "1.0.1",
     "doxdox": "0.1.15",
+    "eslint": "3.7.1",
     "istanbul": "0.4.5",
     "mocha": "3.1.0"
   },
