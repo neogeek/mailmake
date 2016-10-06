@@ -1,88 +1,46 @@
 #!/usr/bin/env node
 
-var chalk = require('chalk'),
-    mailmake = require('..');
+/* eslint global-require: 0 */
 
-function displayHelp() {
+const chalk = require('chalk');
+
+const mailmake = require('..');
+
+const parseCmdLineArgs = require('../lib/utils/cmd').parseCmdLineArgs;
+
+const args = parseCmdLineArgs();
+
+const options = {
+    'from': null,
+    'subject': null,
+    'to': null
+};
+
+if (args.flags['--help']) {
 
     process.stdout.write('\n');
-    process.stdout.write(chalk.blue(' Usage:') + ' mailmake <path> [options]' + '\n\n');
-    process.stdout.write(' Options:' + '\n\n');
-    process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
-    process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
-    process.stdout.write(chalk.yellow('  -s, --subject') + '\t\tSet the subject header.' + '\n');
-    process.stdout.write(chalk.yellow('  -f, --from') + '\t\tSet the from email address header.' + '\n');
-    process.stdout.write(chalk.yellow('  -t, --to') + '\t\tSet the to email address header.' + '\n');
+    process.stdout.write(`${chalk.blue(' Usage:')} mailmake <path> [options]\n\n`);
+    process.stdout.write(' Options:\n\n');
+    process.stdout.write(`${chalk.yellow('  -h, --help')}\t\tDisplay this help message.\n`);
+    process.stdout.write(`${chalk.yellow('  -v, --version')}\t\tDisplay the current installed version.\n`);
+    process.stdout.write(`${chalk.yellow('  -f, --from')}\t\tSet the from email address header.\n`);
+    process.stdout.write(`${chalk.yellow('  -s, --subject')}\t\tSet the subject header.\n`);
+    process.stdout.write(`${chalk.yellow('  -t, --to')}\t\tSet the to email address header.\n`);
     process.stdout.write('\n');
 
-}
+} else if (args.flags['--version'] || args.flags['-v']) {
 
-var input,
-    options = {};
-
-var args = process.argv.slice(2);
-
-if (args.length && !args[0].match(/^\-/)) {
-
-    input = args.shift();
-
-}
-
-while (args.length) {
-
-    switch (args.shift()) {
-
-    case '-s':
-    case '--subject':
-
-        options.subject = args.shift();
-
-        break;
-
-    case '-f':
-    case '--from':
-
-        options.from = args.shift();
-
-        break;
-
-    case '-t':
-    case '--to':
-
-        options.to = args.shift();
-
-        break;
-
-    case '-v':
-    case '--version':
-
-        process.stdout.write(require('../package').version + '\n');
-        process.exit();
-
-        break;
-
-    default:
-
-        displayHelp();
-        process.exit();
-
-        break;
-
-    }
-
-}
-
-if (input) {
-
-    mailmake.generate(input, options).then(function (output) {
-
-        process.stdout.write(output);
-
-    });
-
-} else {
-
-    displayHelp();
+    process.stdout.write(`${require('../package').version}\n`);
     process.exit();
 
 }
+
+options.from = args.flags['--from'] || args.flags['-f'] || null;
+options.subject = args.flags['--subject'] || args.flags['-s'] || null;
+options.to = args.flags['--to'] || args.flags['-t'] || null;
+
+mailmake.generate(args.input, options).then(output => {
+
+    process.stdout.write(output);
+
+});
