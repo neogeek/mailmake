@@ -1,59 +1,42 @@
-var fs = require('fs');
-var assert = require('assert');
+/* eslint handle-callback-err: 0 */
 
-var mailmake = require('../../lib/mailmake');
+const assert = require('assert');
 
-describe('mailmake', function () {
+const fs = require('fs');
 
-    before(function () {
+const mailmake = require('../../lib/mailmake');
+
+describe('mailmake', () => {
+
+    before(() => {
 
         mailmake.seed = 's';
 
     });
 
-    it('should generate random string', function () {
-
-        assert.equal(mailmake.randomString(10), 'ssssssssss');
-
-    });
-
-    it('should generate random string without passing number', function () {
+    it('should generate random string', () => {
 
         assert.equal(mailmake.randomString(), 'ssssssssssssssssssss');
 
     });
 
-    it('should generate boundary', function (done) {
-
-        fs.readFile('./test/fixture/email.html', 'utf8', function (err, data) {
-
-            assert.equal(mailmake.boundaryString(data), '==============ssssssssssssssssssss==');
-
-            done();
-
-        });
-
-    });
-
-    it('should generate boundary without passing email contents', function (done) {
+    it('should generate boundary', () => {
 
         assert.equal(mailmake.boundaryString(), '==============ssssssssssssssssssss==');
 
-        done();
-
     });
 
-    it('should generate mime file from file', function (done) {
+    it('should generate mime file from file', done => {
 
         mailmake.generate('./test/fixture/email.html', {
-            subject: 'Hello World!',
-            from: 'test@example.com',
-            to: 'mailing-list@example.com'
-        }).then(function (output) {
+            'from': 'test@example.com',
+            'subject': 'Hello World!',
+            'to': 'mailing-list@example.com'
+        }).then(output => {
 
             // fs.writeFileSync('./test/fixture/email.mime', output, 'utf8');
 
-            fs.readFile('./test/fixture/email.mime', 'utf8', function (err, data) {
+            fs.readFile('./test/fixture/email.mime', 'utf8', (err, data) => {
 
                 assert.equal(output, data);
 
@@ -65,17 +48,17 @@ describe('mailmake', function () {
 
     });
 
-    it('should generate mime file from string', function (done) {
+    it('should generate mime file from string', done => {
 
-        fs.readFile('./test/fixture/email.html', 'utf8', function (err, email) {
+        fs.readFile('./test/fixture/email.html', 'utf8', (err, email) => {
 
             mailmake.generate(email, {
-                subject: 'Hello World!',
-                from: 'test@example.com',
-                to: 'mailing-list@example.com'
-            }).then(function (output) {
+                'from': 'test@example.com',
+                'subject': 'Hello World!',
+                'to': 'mailing-list@example.com'
+            }).then(output => {
 
-                fs.readFile('./test/fixture/email.mime', 'utf8', function (err, data) {
+                fs.readFile('./test/fixture/email.mime', 'utf8', (err, data) => {
 
                     assert.equal(output, data);
 
@@ -89,16 +72,16 @@ describe('mailmake', function () {
 
     });
 
-    it('should generate mime file from string (private method)', function (done) {
+    it('should generate mime file from string (private method)', done => {
 
-        fs.readFile('./test/fixture/email.html', 'utf8', function (err, email) {
+        fs.readFile('./test/fixture/email.html', 'utf8', (err, email) => {
 
-            fs.readFile('./test/fixture/email.mime', 'utf8', function (err, data) {
+            fs.readFile('./test/fixture/email.mime', 'utf8', (err, data) => {
 
-                assert.equal(mailmake._generateFromString(email, {
-                    subject: 'Hello World!',
-                    from: 'test@example.com',
-                    to: 'mailing-list@example.com'
+                assert.equal(mailmake.generateFromString(email, {
+                    'from': 'test@example.com',
+                    'subject': 'Hello World!',
+                    'to': 'mailing-list@example.com'
                 }), data);
 
                 done();

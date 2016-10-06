@@ -53,16 +53,11 @@ mailmake.generate(email_contents, {
 
 
 
-### randomString([num]) 
+### randomString()
 
 Returns a randomly generated string based on seed.
 
-    console.log(mailmake.randomString(10));
-
-
-#### Parameters
-
-- **num** `Integer`  *Optional* The length of randomly generated string. Default 20.
+    console.log(mailmake.randomString());
 
 
 
@@ -75,7 +70,7 @@ Returns a randomly generated string based on seed.
 
 
 
-### boundaryString() 
+### boundaryString()
 
 Returns a boundary string.
 
@@ -122,7 +117,7 @@ Returns generated mime file contents.
 
 
 
-### generate(input[, options]) 
+### generate(input[, options])
 
 Returns generated mime file contents based on either file or string.
 
