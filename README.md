@@ -1,12 +1,11 @@
-[![Build Status](https://api.travis-ci.org/neogeek/mailmake.svg)](https://travis-ci.org/neogeek/mailmake)
-[![Dependency Status](https://david-dm.org/neogeek/mailmake.svg?style=flat)](https://david-dm.org/neogeek/mailmake)
-[![Code Climate](https://codeclimate.com/github/neogeek/mailmake/badges/gpa.svg)](https://codeclimate.com/github/neogeek/mailmake)
-[![Coverage Status](https://coveralls.io/repos/neogeek/mailmake/badge.svg?branch=master)](https://coveralls.io/r/neogeek/mailmake?branch=master)
-[![NPM Version](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
-
 # mailmake
 
 > Generate RFC1521 valid mime files for use with Mailgun and other similar services.
+
+[![Build Status](https://api.travis-ci.org/neogeek/mailmake.svg)](https://travis-ci.org/neogeek/mailmake)
+[![Dependency Status](https://david-dm.org/neogeek/mailmake.svg?style=flat)](https://david-dm.org/neogeek/mailmake)
+[![codecov](https://img.shields.io/codecov/c/github/neogeek/makefile/master.svg)](https://codecov.io/gh/neogeek/makefile)
+[![NPM Version](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
 
 ## Installation
 
@@ -54,7 +53,7 @@ mailmake.generate(email_contents, {
 
 
 
-### mailmake.randomString([num]) 
+### randomString([num]) 
 
 Returns a randomly generated string based on seed.
 
@@ -76,16 +75,11 @@ Returns a randomly generated string based on seed.
 
 
 
-### mailmake.boundaryString([contents]) 
+### boundaryString() 
 
-Returns a valid boundary string based on contents of email.
+Returns a boundary string.
 
-    console.log(mailmake.boundaryString(fs.readFileSync('email.html', 'utf8')));
-
-
-#### Parameters
-
-- **contents** `String`  *Optional* Contents of email.
+    console.log(mailmake.boundaryString());
 
 
 
@@ -98,7 +92,37 @@ Returns a valid boundary string based on contents of email.
 
 
 
-### mailmake.generate(input[, options]) 
+### generateFromString(input[, options])  *private method*
+
+Returns generated mime file contents.
+
+    console.log(mailmake.generateFromString('# Hello World!', {
+        subject: 'Hello World!',
+        from: 'test@example.com',
+        to: 'mailing-list@example.com'
+    }));
+
+
+#### Parameters
+
+- **input** `String`   String of email contents. Can be either HTML or Markdown.
+- **options** `String`  *Optional* Options for generating file.
+- **options.subject** `String`  *Optional* Subject of email.
+- **options.from** `String`  *Optional* From address of email.
+- **options.to** `String`  *Optional* To address of email.
+
+
+
+
+#### Returns
+
+
+- `String`   Returns contents of generated mime file.
+
+
+
+
+### generate(input[, options]) 
 
 Returns generated mime file contents based on either file or string.
 
@@ -126,36 +150,6 @@ Returns generated mime file contents based on either file or string.
 
 
 - `Object`   Promise returns contents of generated mime file.
-
-
-
-
-### mailmake._generateFromString(input[, options])  *private method*
-
-Returns generated mime file contents.
-
-    console.log(mailmake._generateFromString('# Hello World!', {
-        subject: 'Hello World!',
-        from: 'test@example.com',
-        to: 'mailing-list@example.com'
-    }));
-
-
-#### Parameters
-
-- **input** `String`   String of email contents. Can be either HTML or Markdown.
-- **options** `String`  *Optional* Options for generating file.
-- **options.subject** `String`  *Optional* Subject of email.
-- **options.from** `String`  *Optional* From address of email.
-- **options.to** `String`  *Optional* To address of email.
-
-
-
-
-#### Returns
-
-
-- `String`   Returns contents of generated mime file.
 
 
 
