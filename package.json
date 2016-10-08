@@ -13,7 +13,7 @@
     "markdown-it": "8.0.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "1.6.1",
+    "@neogeek/eslint-config-standards": "1.6.2",
     "codecov": "1.0.1",
     "doxdox": "0.1.15",
     "eslint": "3.7.1",
