@@ -2,9 +2,11 @@
 
 > Generate RFC1521 valid mime files for use with Mailgun and other similar services.
 
-[![Build Status](https://api.travis-ci.org/neogeek/mailmake.svg)](https://travis-ci.org/neogeek/mailmake)
-[![Dependency Status](https://david-dm.org/neogeek/mailmake.svg?style=flat)](https://david-dm.org/neogeek/mailmake)
+[![Build Status](https://travis-ci.org/neogeek/mailmake.svg?branch=master)](https://travis-ci.org/neogeek/mailmake)
 [![codecov](https://img.shields.io/codecov/c/github/neogeek/mailmake/master.svg)](https://codecov.io/gh/neogeek/mailmake)
+[![Dependency Status](https://david-dm.org/neogeek/mailmake.svg)](https://david-dm.org/neogeek/mailmake)
+[![Known Vulnerabilities](https://snyk.io/test/npm/mailmake/badge.svg)](https://snyk.io/test/npm/mailmake)
+[![bitHound Overall Score](https://www.bithound.io/github/neogeek/mailmake/badges/score.svg)](https://www.bithound.io/github/neogeek/mailmake)
 [![NPM Version](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
 
 ## Installation
