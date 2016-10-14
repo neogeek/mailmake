@@ -6,9 +6,7 @@ const chalk = require('chalk');
 
 const mailmake = require('..');
 
-const parseCmdLineArgs = require('../lib/utils/cmd').parseCmdLineArgs;
-
-const args = parseCmdLineArgs();
+const args = require('parse-cmd-args')();
 
 const options = {
     'from': null,
