@@ -1,5 +1,10 @@
+coverage/
+
 templates/
+
 test/
+
+.eslintrc
 
 .travis.yml
 
