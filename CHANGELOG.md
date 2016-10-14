@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3 (October 14, 2015)
+
+- Fixed bug with help display.
+- Updated packages.
+
 ## 1.0.2 (October 6, 2015)
 
 - Changed minimum Node.js version to 4.
