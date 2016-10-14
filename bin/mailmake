@@ -14,7 +14,7 @@ const options = {
     'to': null
 };
 
-if (args.flags['--help']) {
+if (args.flags['--help'] || args.flags['-h']) {
 
     process.stdout.write('\n');
     process.stdout.write(`${chalk.blue(' Usage:')} mailmake <path> [options]\n\n`);
@@ -25,6 +25,7 @@ if (args.flags['--help']) {
     process.stdout.write(`${chalk.yellow('  -s, --subject')}\t\tSet the subject header.\n`);
     process.stdout.write(`${chalk.yellow('  -t, --to')}\t\tSet the to email address header.\n`);
     process.stdout.write('\n');
+    process.exit();
 
 } else if (args.flags['--version'] || args.flags['-v']) {
 
