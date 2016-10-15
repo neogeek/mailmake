@@ -23,15 +23,17 @@ if (args.flags['--version'] || args.flags['-v']) {
 
 } else if (!args.input || args.flags['--help'] || args.flags['-h']) {
 
-    process.stdout.write('\n');
-    process.stdout.write(`${chalk.blue(' Usage:')} mailmake <path> [options]\n\n`);
-    process.stdout.write(' Options:\n\n');
-    process.stdout.write(`${chalk.yellow('  -h, --help')}\t\tDisplay this help message.\n`);
-    process.stdout.write(`${chalk.yellow('  -v, --version')}\t\tDisplay the current installed version.\n`);
-    process.stdout.write(`${chalk.yellow('  -f, --from')}\t\tSet the from email address header.\n`);
-    process.stdout.write(`${chalk.yellow('  -s, --subject')}\t\tSet the subject header.\n`);
-    process.stdout.write(`${chalk.yellow('  -t, --to')}\t\tSet the to email address header.\n`);
-    process.stdout.write('\n');
+    process.stdout.write(`
+${chalk.blue(' Usage:')} mailmake <path> [options]
+
+ Options:
+${chalk.yellow('  -h, --help')}         Display this help message.
+${chalk.yellow('  -v, --version')}      Display the current installed version.
+${chalk.yellow('  -f, --from')}         Set the from email address header.
+${chalk.yellow('  -s, --subject')}      Set the subject header.
+${chalk.yellow('  -t, --to')}           Set the to email address header.
+
+`);
     process.exit();
 
 } else {
