@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4 (October 15, 2015)
+
+- Prevented mailmake from running without user input.
+- Updated packages.
+
 ## 1.0.3 (October 14, 2015)
 
 - Fixed bug with help display.
