@@ -6,15 +6,22 @@ const chalk = require('chalk');
 
 const mailmake = require('..');
 
-const args = require('parse-cmd-args')();
+const args = require('parse-cmd-args')(null, {
+    'requireUserInput': true
+});
 
 const options = {
-    'from': null,
-    'subject': null,
-    'to': null
+    'from': args.flags['--from'] || args.flags['-f'] || null,
+    'subject': args.flags['--subject'] || args.flags['-s'] || null,
+    'to': args.flags['--to'] || args.flags['-t'] || null
 };
 
-if (args.flags['--help'] || args.flags['-h']) {
+if (args.flags['--version'] || args.flags['-v']) {
+
+    process.stdout.write(`${require('../package').version}\n`);
+    process.exit();
+
+} else if (!args.input || args.flags['--help'] || args.flags['-h']) {
 
     process.stdout.write('\n');
     process.stdout.write(`${chalk.blue(' Usage:')} mailmake <path> [options]\n\n`);
@@ -27,19 +34,12 @@ if (args.flags['--help'] || args.flags['-h']) {
     process.stdout.write('\n');
     process.exit();
 
-} else if (args.flags['--version'] || args.flags['-v']) {
+} else {
 
-    process.stdout.write(`${require('../package').version}\n`);
-    process.exit();
+    mailmake.generate(args.input, options).then(output => {
+
+        process.stdout.write(output);
+
+    });
 
 }
-
-options.from = args.flags['--from'] || args.flags['-f'] || null;
-options.subject = args.flags['--subject'] || args.flags['-s'] || null;
-options.to = args.flags['--to'] || args.flags['-t'] || null;
-
-mailmake.generate(args.input, options).then(output => {
-
-    process.stdout.write(output);
-
-});
