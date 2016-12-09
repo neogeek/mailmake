@@ -8,6 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/mailmake/badge.svg)](https://snyk.io/test/npm/mailmake)
 [![bitHound Overall Score](https://www.bithound.io/github/neogeek/mailmake/badges/score.svg)](https://www.bithound.io/github/neogeek/mailmake)
 [![NPM Version](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
+[![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/mailmake)
 
 ## Installation
 
@@ -54,8 +55,10 @@ mailmake.generate(email_contents, {
 ```
 
 
+### lib/mailmake.js
 
-### randomString() 
+
+#### randomString() 
 
 Returns a randomly generated string based on seed.
 
@@ -64,15 +67,16 @@ Returns a randomly generated string based on seed.
 
 
 
-#### Returns
 
 
-- `String`   Randomly generated string.
+##### Returns
+
+
+- `String`  Randomly generated string.
 
 
 
-
-### boundaryString() 
+#### boundaryString() 
 
 Returns a boundary string.
 
@@ -81,15 +85,16 @@ Returns a boundary string.
 
 
 
-#### Returns
 
 
-- `String`   Boundary string.
+##### Returns
+
+
+- `String`  Boundary string.
 
 
 
-
-### generateFromString(input[, options])  *private method*
+#### generateFromString(input[, options])  *private method*
 
 Returns generated mime file contents.
 
@@ -100,26 +105,29 @@ Returns generated mime file contents.
     }));
 
 
-#### Parameters
-
-- **input** `String`   String of email contents. Can be either HTML or Markdown.
-- **options** `String`  *Optional* Options for generating file.
-- **options.from** `String`  *Optional* From address of email.
-- **options.subject** `String`  *Optional* Subject of email.
-- **options.to** `String`  *Optional* To address of email.
 
 
+##### Parameters
 
-
-#### Returns
-
-
-- `String`   Returns contents of generated mime file.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| input | `String`  | String of email contents. Can be either HTML or Markdown. | &nbsp; |
+| options | `String`  | Options for generating file. | *Optional* |
+| options.from | `String`  | From address of email. | *Optional* |
+| options.subject | `String`  | Subject of email. | *Optional* |
+| options.to | `String`  | To address of email. | *Optional* |
 
 
 
 
-### generate(input[, options]) 
+##### Returns
+
+
+- `String`  Returns contents of generated mime file.
+
+
+
+#### generate(input[, options]) 
 
 Returns generated mime file contents based on either file or string.
 
@@ -132,21 +140,25 @@ Returns generated mime file contents based on either file or string.
     });
 
 
-#### Parameters
-
-- **input** `String`   File path or string of email contents. Can be either HTML or Markdown.
-- **options** `String`  *Optional* Options for generating file.
-- **options.from** `String`  *Optional* From address of email.
-- **options.subject** `String`  *Optional* Subject of email.
-- **options.to** `String`  *Optional* To address of email.
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| input | `String`  | File path or string of email contents. Can be either HTML or Markdown. | &nbsp; |
+| options | `String`  | Options for generating file. | *Optional* |
+| options.from | `String`  | From address of email. | *Optional* |
+| options.subject | `String`  | Subject of email. | *Optional* |
+| options.to | `String`  | To address of email. | *Optional* |
 
 
-#### Returns
 
 
-- `Object`   Promise returns contents of generated mime file.
+##### Returns
+
+
+- `Object`  Promise returns contents of generated mime file.
 
 
 
