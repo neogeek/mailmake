@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6 (December 15, 2016)
+
+- Added update-notifier package.
+- Updated packages.
+
 ## 1.0.5 (December 8, 2016)
 
 - Updated packages.
