@@ -30,6 +30,12 @@ $ npm install mailmake -g
   -t, --to          Set the to email address header.
 ```
 
+### CLI
+
+```
+$ mailmake email.html --from "test@example.com" --subject "Hello World!" --to "mailing-list@example.com" > email.mime
+```
+
 ## API
 
 ### Install
