@@ -28,15 +28,15 @@ describe('mailmake', () => {
 
     it('should generate mime file from file', done => {
 
-        mailmake.generate('./test/fixture/email.html', {
+        mailmake.generate('./test/fixtures/email.html', {
             'from': 'test@example.com',
             'subject': 'Hello World!',
             'to': 'mailing-list@example.com'
         }).then(output => {
 
-            // fs.writeFileSync('./test/fixture/email.mime', output, 'utf8');
+            // fs.writeFileSync('./test/fixtures/email.mime', output, 'utf8');
 
-            fs.readFile('./test/fixture/email.mime', 'utf8', (err, data) => {
+            fs.readFile('./test/fixtures/email.mime', 'utf8', (err, data) => {
 
                 assert.equal(output, data);
 
@@ -50,7 +50,7 @@ describe('mailmake', () => {
 
     it('should generate mime file from string', done => {
 
-        fs.readFile('./test/fixture/email.html', 'utf8', (err, email) => {
+        fs.readFile('./test/fixtures/email.html', 'utf8', (err, email) => {
 
             mailmake.generate(email, {
                 'from': 'test@example.com',
@@ -58,7 +58,7 @@ describe('mailmake', () => {
                 'to': 'mailing-list@example.com'
             }).then(output => {
 
-                fs.readFile('./test/fixture/email.mime', 'utf8', (err, data) => {
+                fs.readFile('./test/fixtures/email.mime', 'utf8', (err, data) => {
 
                     assert.equal(output, data);
 
@@ -74,9 +74,9 @@ describe('mailmake', () => {
 
     it('should generate mime file from string (private method)', done => {
 
-        fs.readFile('./test/fixture/email.html', 'utf8', (err, email) => {
+        fs.readFile('./test/fixtures/email.html', 'utf8', (err, email) => {
 
-            fs.readFile('./test/fixture/email.mime', 'utf8', (err, data) => {
+            fs.readFile('./test/fixtures/email.mime', 'utf8', (err, data) => {
 
                 assert.equal(mailmake.generateFromString(email, {
                     'from': 'test@example.com',
