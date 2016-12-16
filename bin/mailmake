@@ -13,7 +13,10 @@ const args = require('parse-cmd-args')(null, {
     'requireUserInput': true
 });
 
-updateNotifier({pkg}).notify();
+updateNotifier({
+    'defer': true,
+    pkg
+}).notify();
 
 const options = {
     'from': args.flags['--from'] || args.flags['-f'] || null,
