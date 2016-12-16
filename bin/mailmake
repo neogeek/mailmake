@@ -3,12 +3,17 @@
 /* eslint global-require: 0 */
 
 const chalk = require('chalk');
+const updateNotifier = require('update-notifier');
 
-const mailmake = require('..');
+const mailmake = require('../index');
+
+const pkg = require('../package');
 
 const args = require('parse-cmd-args')(null, {
     'requireUserInput': true
 });
+
+updateNotifier({pkg}).notify();
 
 const options = {
     'from': args.flags['--from'] || args.flags['-f'] || null,
@@ -18,7 +23,7 @@ const options = {
 
 if (args.flags['--version'] || args.flags['-v']) {
 
-    process.stdout.write(`${require('../package').version}\n`);
+    process.stdout.write(`${pkg.version}\n`);
     process.exit();
 
 } else if (!args.input || args.flags['--help'] || args.flags['-h']) {
