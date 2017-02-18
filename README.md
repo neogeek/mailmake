@@ -1,7 +1,5 @@
 # mailmake
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/mailmake.svg)](https://greenkeeper.io/)
-
 > Generate RFC1521 valid mime files for use with Mailgun and other similar services.
 
 [![Build Status](https://travis-ci.org/neogeek/mailmake.svg?branch=master)](https://travis-ci.org/neogeek/mailmake)
@@ -10,6 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/mailmake/badge.svg)](https://snyk.io/test/npm/mailmake)
 [![bitHound Overall Score](https://www.bithound.io/github/neogeek/mailmake/badges/score.svg)](https://www.bithound.io/github/neogeek/mailmake)
 [![NPM Version](http://img.shields.io/npm/v/mailmake.svg?style=flat)](https://www.npmjs.org/package/mailmake)
+[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/mailmake.svg)](https://greenkeeper.io/)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/mailmake)
 
 ## Installation
