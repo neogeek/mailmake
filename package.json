@@ -23,7 +23,11 @@
     "mocha": "^3.4.2"
   },
   "scripts": {
-    "test": "make lint && make coverage"
+    "test": "npm run lint && mocha test/specs/",
+    "test:docs": "doxdox lib/mailmake.js --layout templates/README.hbs | diff README.md -",
+    "lint": "eslint .",
+    "coverage": "istanbul cover _mocha test/specs/ && codecov",
+    "docs": "doxdox lib/mailmake.js --layout templates/README.hbs --output README.md"
   },
   "keywords": [
     "mime",
