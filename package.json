@@ -16,11 +16,11 @@
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "^2.0.0",
-    "codecov": "^2.2.0",
-    "doxdox": "^2.0.2",
+    "codecov": "^2.3.0",
+    "doxdox": "^2.0.3",
     "eslint": "^4.5.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.4.2"
+    "mocha": "^3.5.0"
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/",
