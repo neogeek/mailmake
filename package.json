@@ -9,7 +9,7 @@
   "main": "./lib/mailmake.js",
   "license": "MIT",
   "dependencies": {
-    "chalk": "2.1.0",
+    "chalk": "2.3.0",
     "markdown-it": "8.4.0",
     "parse-cmd-args": "2.0.0",
     "update-notifier": "2.2.0"
