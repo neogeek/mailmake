@@ -12,7 +12,7 @@
     "chalk": "2.3.0",
     "markdown-it": "8.4.0",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.2.0"
+    "update-notifier": "2.3.0"
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "^2.0.0",
