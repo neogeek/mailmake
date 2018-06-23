@@ -18,7 +18,7 @@
     "@neogeek/eslint-config-standards": "^2.0.0",
     "codecov": "^2.3.0",
     "doxdox": "^2.0.3",
-    "eslint": "^4.5.0",
+    "eslint": "^5.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1"
   },
