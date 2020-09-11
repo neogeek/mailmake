@@ -8,27 +8,24 @@ const mailmake = require('../index');
 const pkg = require('../package');
 
 const args = require('parse-cmd-args')(null, {
-    'requireUserInput': true
+    requireUserInput: true
 });
 
 updateNotifier({
-    'defer': true,
+    defer: true,
     pkg
 }).notify();
 
 const options = {
-    'from': args.flags['--from'] || args.flags['-f'] || null,
-    'subject': args.flags['--subject'] || args.flags['-s'] || null,
-    'to': args.flags['--to'] || args.flags['-t'] || null
+    from: args.flags['--from'] || args.flags['-f'] || null,
+    subject: args.flags['--subject'] || args.flags['-s'] || null,
+    to: args.flags['--to'] || args.flags['-t'] || null
 };
 
 if (args.flags['--version'] || args.flags['-v']) {
-
     process.stdout.write(`${pkg.version}\n`);
     process.exit();
-
 } else if (!args.input || args.flags['--help'] || args.flags['-h']) {
-
     process.stdout.write(`
 ${chalk.blue(' Usage:')} mailmake <path> [options]
 
@@ -41,13 +38,8 @@ ${chalk.yellow('  -t, --to')}           Set the to email address header.
 
 `);
     process.exit();
-
 } else {
-
     mailmake.generate(args.input, options).then(output => {
-
         process.stdout.write(output);
-
     });
-
 }
