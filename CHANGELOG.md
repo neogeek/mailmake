@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0 (September 11, 2020)
+
+- Updated Node.js min version.
+- Updated packages.
+
 ## 1.0.8 (August 23, 2017)
 
 - Updated packages.
