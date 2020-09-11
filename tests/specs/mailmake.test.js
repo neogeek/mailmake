@@ -5,7 +5,7 @@ const fs = require('fs');
 const mailmake = require('../../lib/mailmake');
 
 describe('mailmake', () => {
-    before(() => {
+    beforeAll(() => {
         mailmake.seed = 's';
     });
 
