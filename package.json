@@ -17,17 +17,14 @@
   "devDependencies": {
     "@neogeek/eslint-config-standards": "^2.0.0",
     "codecov": "^2.3.0",
-    "doxdox": "^2.0.3",
     "eslint": "^4.5.0",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1"
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/",
-    "test:docs": "doxdox lib/mailmake.js --layout templates/README.hbs | diff README.md -",
     "lint": "eslint .",
-    "coverage": "istanbul cover _mocha test/specs/ && codecov",
-    "docs": "doxdox lib/mailmake.js --layout templates/README.hbs --output README.md"
+    "coverage": "istanbul cover _mocha test/specs/ && codecov"
   },
   "keywords": [
     "mime",
