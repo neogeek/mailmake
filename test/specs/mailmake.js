@@ -10,11 +10,11 @@ describe('mailmake', () => {
     });
 
     it('should generate random string', () => {
-        assert.equal(mailmake.randomString(), 'ssssssssssssssssssss');
+        assert.strictEqual(mailmake.randomString(), 'ssssssssssssssssssss');
     });
 
     it('should generate boundary', () => {
-        assert.equal(
+        assert.strictEqual(
             mailmake.boundaryString(),
             '==============ssssssssssssssssssss=='
         );
@@ -34,7 +34,7 @@ describe('mailmake', () => {
                     './test/fixtures/email.mime',
                     'utf8',
                     (err, data) => {
-                        assert.equal(output, data);
+                        assert.strictEqual(output, data);
 
                         done();
                     }
@@ -55,7 +55,7 @@ describe('mailmake', () => {
                         './test/fixtures/email.mime',
                         'utf8',
                         (err, data) => {
-                            assert.equal(output, data);
+                            assert.strictEqual(output, data);
 
                             done();
                         }
@@ -67,7 +67,7 @@ describe('mailmake', () => {
     it('should generate mime file from string (private method)', done => {
         fs.readFile('./test/fixtures/email.html', 'utf8', (err, email) => {
             fs.readFile('./test/fixtures/email.mime', 'utf8', (err, data) => {
-                assert.equal(
+                assert.strictEqual(
                     mailmake.generateFromString(email, {
                         from: 'test@example.com',
                         subject: 'Hello World!',
