@@ -22,16 +22,16 @@ describe('mailmake', () => {
 
     it('should generate mime file from file', done => {
         mailmake
-            .generate('./test/fixtures/email.html', {
+            .generate('./tests/fixtures/email.html', {
                 from: 'test@example.com',
                 subject: 'Hello World!',
                 to: 'mailing-list@example.com'
             })
             .then(output => {
-                // fs.writeFileSync('./test/fixtures/email.mime', output, 'utf8');
+                // fs.writeFileSync('./tests/fixtures/email.mime', output, 'utf8');
 
                 fs.readFile(
-                    './test/fixtures/email.mime',
+                    './tests/fixtures/email.mime',
                     'utf8',
                     (err, data) => {
                         assert.strictEqual(output, data);
@@ -43,7 +43,7 @@ describe('mailmake', () => {
     });
 
     it('should generate mime file from string', done => {
-        fs.readFile('./test/fixtures/email.html', 'utf8', (err, email) => {
+        fs.readFile('./tests/fixtures/email.html', 'utf8', (err, email) => {
             mailmake
                 .generate(email, {
                     from: 'test@example.com',
@@ -52,7 +52,7 @@ describe('mailmake', () => {
                 })
                 .then(output => {
                     fs.readFile(
-                        './test/fixtures/email.mime',
+                        './tests/fixtures/email.mime',
                         'utf8',
                         (err, data) => {
                             assert.strictEqual(output, data);
@@ -65,8 +65,8 @@ describe('mailmake', () => {
     });
 
     it('should generate mime file from string (private method)', done => {
-        fs.readFile('./test/fixtures/email.html', 'utf8', (err, email) => {
-            fs.readFile('./test/fixtures/email.mime', 'utf8', (err, data) => {
+        fs.readFile('./tests/fixtures/email.html', 'utf8', (err, email) => {
+            fs.readFile('./tests/fixtures/email.mime', 'utf8', (err, data) => {
                 assert.strictEqual(
                     mailmake.generateFromString(email, {
                         from: 'test@example.com',
