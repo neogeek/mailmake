@@ -15,15 +15,12 @@
     "update-notifier": "2.3.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "^2.0.0",
     "codecov": "^2.3.0",
-    "eslint": "^4.5.0",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1"
   },
   "scripts": {
-    "test": "npm run lint && mocha test/specs/",
-    "lint": "eslint .",
+    "test": "mocha test/specs/",
     "coverage": "istanbul cover _mocha test/specs/ && codecov"
   },
   "keywords": [

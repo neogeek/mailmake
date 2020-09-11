@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "@neogeek/eslint-config-standards/.eslintrc-tests"
-  ],
-  "rules": {
-    "capitalized-comments": 0
-  }
-}

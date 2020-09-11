@@ -1,5 +1,3 @@
-/* eslint handle-callback-err: 0 */
-
 const assert = require('assert');
 
 const fs = require('fs');
